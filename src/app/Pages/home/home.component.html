@@ -751,12 +751,10 @@ Main Banner START -->
         <!-- Content -->
         <div class="col-lg-6 m-auto order-2">
           <div class="px-5 px-xxl-8 py-6 py-lg-8">
-            <!-- Title -->
             <h1 class="display-2 mb-4 lh-base">
               Designing the
               <span class="position-relative z-index-2">
                 Future
-                <!-- Decoration Line -->
                 <span
                   class="w-100 h-auto bg-primary p-1 p-md-2 position-absolute bottom-0 start-0 mb-2 mb-sm-3 z-index-n1"
                 ></span>
@@ -774,38 +772,47 @@ Main Banner START -->
 
         <!-- Image slider -->
         <div class="col-lg-6 order-1 order-lg-2 position-relative">
-          <div class="carousel-container h-100">
-            <div
-              class="carousel-item h-100"
-              *ngFor="let image of images; let i = index"
-              [class.active]="currentIndex === i"
-              [@fadeAnimation]="currentIndex === i ? 'in' : 'out'"
-            >
-              <div
-                class="h-100 scale-img py-9"
-                [style.background-image]="'url(' + image + ')'"
-                style="background-position: center left; background-size: cover"
-              ></div>
-            </div>
+          <div class="swiper swiper-img-scale h-100">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div
+                  class="h-100 scale-img w-100"
+                  style="
+                    background-image: url('assets/images/bg/07.jpg');
+                    background-position: center;
+                    background-size: cover;
+                  "
+                ></div>
+              </div>
 
-            <!-- Carousel controls -->
-            <div class="carousel-controls">
-              <button class="carousel-control prev" (click)="prevSlide()">
-                <span class="carousel-control-icon">‹</span>
-              </button>
-              <button class="carousel-control next" (click)="nextSlide()">
-                <span class="carousel-control-icon">›</span>
-              </button>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div
+                  class="h-100 scale-img w-100"
+                  style="
+                    background-image: url('assets/images/bg/12.jpg');
+                    background-position: center;
+                    background-size: cover;
+                  "
+                ></div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div
+                  class="h-100 scale-img w-100"
+                  style="
+                    background-image: url('assets/images/bg/13.jpg');
+                    background-position: center;
+                    background-size: cover;
+                  "
+                ></div>
+              </div>
             </div>
 
             <!-- Pagination -->
-            <div class="carousel-pagination">
-              <button
-                *ngFor="let item of images; let i = index"
-                [class.active]="currentIndex === i"
-                (click)="goToSlide(i)"
-              ></button>
-            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
