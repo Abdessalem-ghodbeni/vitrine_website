@@ -7,6 +7,7 @@ import { ServicesComponent } from '../services/services.component';
 import { DemarcheComponent } from '../demarche/demarche.component';
 import { ChiffreComponent } from '../chiffre/chiffre.component';
 import { FQComponent } from '../fq/fq.component';
+import { WhyEquinoxComponent } from '../../why-equinox/why-equinox.component';
 // Dans votre composant ou fichier global styles.css
 
 // Configurez Swiper pour utiliser les modules nécessaires
@@ -21,6 +22,7 @@ Swiper.use([Autoplay, EffectFade, Pagination]);
     DemarcheComponent,
     ChiffreComponent,
     FQComponent,
+    WhyEquinoxComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
