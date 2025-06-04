@@ -4,6 +4,7 @@ import Swiper from 'swiper';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import { AboutComponent } from '../about/about.component';
 import { ServicesComponent } from '../services/services.component';
+// Dans votre composant ou fichier global styles.css
 
 // Configurez Swiper pour utiliser les modules nécessaires
 Swiper.use([Autoplay, EffectFade, Pagination]);
