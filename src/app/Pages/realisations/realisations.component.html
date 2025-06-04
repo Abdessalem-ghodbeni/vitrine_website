@@ -1,0 +1,176 @@
+<!-- realisations.component.html -->
+<section class="py-5">
+  <div class="container">
+    <div class="inner-container text-center mb-4 mb-sm-6">
+      <h2 class="mb-4">Nos Réalisations Architecturales</h2>
+      <p class="mb-0">
+        Découvrez notre portefeuille de projets qui incarnent notre excellence
+        technique, notre créativité et notre engagement envers la qualité
+        architecturale.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 col-lg-3">
+        <div class="d-flex flex-column h-100">
+          <h6 class="mb-sm-3">Domaines d'expertise :</h6>
+          <div class="grid-menu mb-4">
+            <ul class="nav flex-md-column gap-1 nav-pills nav-pills-primary">
+              <li class="nav-item" *ngFor="let category of categories">
+                <a
+                  class="nav-link"
+                  [class.active]="activeFilter === category.id"
+                  (click)="setFilter(category.id)"
+                >
+                  {{ category.name }}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-auto">
+            <h6 class="mb-3">Nos Valeurs :</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-2">✓ Sens aigu des responsabilités</li>
+              <li class="mb-2">✓ Exigence de qualité des matériaux</li>
+              <li class="mb-2">✓ Coordination technique continue</li>
+              <li class="mb-2">✓ Suivi rigoureux des délais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-lg-9">
+        <!-- Correction ici : utilisation de la nouvelle méthode -->
+        <div
+          *ngIf="activeFilter !== '*'"
+          class="category-description mb-5 p-4 bg-light rounded"
+        >
+          <h4 class="mb-3">{{ getActiveCategoryName() }}</h4>
+          <p class="lead mb-0">{{ getActiveCategoryDescription() }}</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 grid-item" *ngFor="let item of filteredItems">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title text-primary">{{ item.title }}</h5>
+                  <span class="badge bg-secondary align-self-start">
+                    {{ item.category[0] | uppercase }}
+                  </span>
+                </div>
+                <p class="card-text mt-3">{{ item.description }}</p>
+                <div class="mt-auto pt-2 border-top">
+                  <small class="text-muted"
+                    >Détails techniques disponibles sur demande</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div
+  class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5"
+>
+  <!-- Svg decoration -->
+  <figure class="position-absolute top-0 start-0 ms-n8">
+    <svg
+      width="424"
+      height="405"
+      viewBox="0 0 424 405"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <ellipse
+        cx="212"
+        cy="202.5"
+        rx="212"
+        ry="202.5"
+        fill="url(#paint0_linear_153_3831)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_153_3831"
+          x1="212"
+          y1="0"
+          x2="212"
+          y2="405"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0" />
+          <stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0.5" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </figure>
+
+  <!-- SVG decoration -->
+  <figure class="position-absolute top-0 end-0 me-n8 mt-5">
+    <svg
+      class="opacity-3"
+      width="371"
+      height="354"
+      viewBox="0 0 371 354"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <ellipse
+        cx="172.5"
+        cy="176.5"
+        rx="131.5"
+        ry="125.5"
+        fill="url(#paint0_linear_195_2)"
+      />
+      <ellipse
+        cx="185.5"
+        cy="177"
+        rx="185.5"
+        ry="177"
+        fill="url(#paint1_linear_195_2)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_195_2"
+          x1="172.5"
+          y1="51"
+          x2="172.5"
+          y2="302"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.5" />
+          <stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_195_2"
+          x1="185.5"
+          y1="0"
+          x2="185.5"
+          y2="354"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.2" />
+          <stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </figure>
+
+  <!-- Breadcrumb -->
+  <div class="d-flex justify-content-center position-relative z-index-9">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Portfolio Masonry
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Title -->
+  <h1 class="h2 text-white">Portfolio Masonry</h1>
+</div>
