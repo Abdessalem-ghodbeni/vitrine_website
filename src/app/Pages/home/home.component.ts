@@ -6,6 +6,7 @@ import { AboutComponent } from '../about/about.component';
 import { ServicesComponent } from '../services/services.component';
 import { DemarcheComponent } from '../demarche/demarche.component';
 import { ChiffreComponent } from '../chiffre/chiffre.component';
+import { FQComponent } from '../fq/fq.component';
 // Dans votre composant ou fichier global styles.css
 
 // Configurez Swiper pour utiliser les modules nécessaires
@@ -19,6 +20,7 @@ Swiper.use([Autoplay, EffectFade, Pagination]);
     ServicesComponent,
     DemarcheComponent,
     ChiffreComponent,
+    FQComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
