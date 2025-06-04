@@ -5,3 +5,32 @@
   transform: translateY(-5px);
   box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
 }
+@import 'swiper/swiper-bundle.css';
+
+.swiper-carousel {
+  overflow: hidden;
+  padding: 20px 0;
+
+  .swiper-wrapper {
+    transition-timing-function: linear !important; // Défilement constant
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+  }
+}
