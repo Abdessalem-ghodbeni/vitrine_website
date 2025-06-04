@@ -4,6 +4,8 @@ import Swiper from 'swiper';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import { AboutComponent } from '../about/about.component';
 import { ServicesComponent } from '../services/services.component';
+import { DemarcheComponent } from '../demarche/demarche.component';
+import { ChiffreComponent } from '../chiffre/chiffre.component';
 // Dans votre composant ou fichier global styles.css
 
 // Configurez Swiper pour utiliser les modules nécessaires
@@ -11,7 +13,13 @@ Swiper.use([Autoplay, EffectFade, Pagination]);
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, AboutComponent, ServicesComponent],
+  imports: [
+    CommonModule,
+    AboutComponent,
+    ServicesComponent,
+    DemarcheComponent,
+    ChiffreComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
