@@ -1,0 +1,112 @@
+<section class="bg-dark py-7" data-bs-theme="dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-xl-4">
+        <h3
+          class="text-white mb-4 position-relative pb-3"
+          style="border-bottom: 3px solid #0d6efd"
+        >
+          Ce que disent nos clients
+        </h3>
+        <p class="lead mb-2 text-white-50">
+          Plus de 50 clients nous ont noté
+          <span class="text-warning fw-bold">4.9</span> sur 5.
+        </p>
+
+        <!-- Avatar group -->
+        <div class="mb-5">
+          <div class="d-flex mb-3">
+            <div
+              *ngFor="let avatar of avatarGroup"
+              class="rounded-circle bg-light d-flex align-items-center justify-content-center me-2"
+              style="width: 40px; height: 40px"
+            >
+              <span class="text-dark fw-bold">{{ avatar.initials }}</span>
+            </div>
+          </div>
+          <p class="text-white-50 small">
+            Clients de Sfax, Sousse, Monastir et Tunis
+          </p>
+        </div>
+
+        <!-- Slider arrow -->
+        <div class="d-flex gap-3 position-relative mt-5 mt-md-6">
+          <button
+            class="btn btn-outline-light btn-icon rounded-circle mb-0"
+            (click)="prevTestimonial()"
+          >
+            <i class="bi bi-arrow-left"></i>
+          </button>
+          <button
+            class="btn btn-outline-light btn-icon rounded-circle mb-0"
+            (click)="nextTestimonial()"
+          >
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-xl-8">
+        <!-- Témoignage actuel -->
+        <div
+          *ngIf="testimonials[currentIndex]"
+          class="card card-body bg-light p-4 p-sm-5"
+        >
+          <div
+            class="quote-icon bg-primary bg-opacity-10 text-primary rounded mb-3"
+            style="
+              width: 50px;
+              height: 50px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i class="bi bi-quote fs-2"></i>
+          </div>
+
+          <p class="lead my-3">{{ testimonials[currentIndex].content }}</p>
+
+          <ul class="list-inline mb-4">
+            <li class="list-inline-item me-0">
+              <i class="bi bi-star-fill text-warning"></i>
+            </li>
+            <li class="list-inline-item me-0">
+              <i class="bi bi-star-fill text-warning"></i>
+            </li>
+            <li class="list-inline-item me-0">
+              <i class="bi bi-star-fill text-warning"></i>
+            </li>
+            <li class="list-inline-item me-0">
+              <i class="bi bi-star-fill text-warning"></i>
+            </li>
+            <li class="list-inline-item me-0">
+              <i class="bi bi-star-fill text-warning"></i>
+            </li>
+          </ul>
+
+          <div class="d-sm-flex align-items-center">
+            <div class="flex-shrink-0">
+              <div
+                [class]="
+                  testimonials[currentIndex].bgColor +
+                  ' text-white rounded-circle d-flex align-items-center justify-content-center'
+                "
+                style="width: 56px; height: 56px"
+              >
+                {{ testimonials[currentIndex].initials }}
+              </div>
+            </div>
+            <div class="ms-sm-3 mt-2 mt-sm-0">
+              <h6 class="mb-0">{{ testimonials[currentIndex].name }}</h6>
+              <p class="mb-0 small">
+                {{ testimonials[currentIndex].role }} -
+                {{ testimonials[currentIndex].city }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

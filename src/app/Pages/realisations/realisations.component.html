@@ -176,3 +176,28 @@
     >Voir Empreinte Equinox 9 <i class="fas fa-arrow-right ms-2"></i
   ></a>
 </div>
+<!-- swiper-gallery.component.html -->
+<div
+  #swiperContainer
+  class="swiper"
+  data-swiper-options='{
+      "spaceBetween": 50,
+      "speed":"14000",
+      "autoplay":{
+        "delay": 0,
+        "disableOnInteraction": false
+      },
+      "breakpoints": {
+        "576": {"slidesPerView": 2},
+        "992": {"slidesPerView": 3},
+        "1200": {"slidesPerView": 4},
+        "1400": {"slidesPerView": 5}
+      }}'
+>
+  <div class="swiper-wrapper align-items-center">
+    <!-- Slider items -->
+    <div class="swiper-slide" *ngFor="let image of images">
+      <img [src]="image" class="rounded" alt="Gallery image" />
+    </div>
+  </div>
+</div>

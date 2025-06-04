@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
 @Component({
   selector: 'app-realisations',
   standalone: true,
@@ -135,5 +136,58 @@ export class RealisationsComponent {
 
   getActiveCategoryDescription() {
     return this.categoryDescriptions[this.activeFilter] || '';
+  }
+  @ViewChild('swiperContainer') swiperContainer!: ElementRef;
+
+  images = [
+    'assets/gallerie/g1.jpg',
+    'assets/gallerie/g2.jpg',
+    'assets/gallerie/g111.jpg',
+    'assets/gallerie/g102.jpg',
+    'assets/gallerie/g30.jpg',
+    'assets/gallerie/g32.jpg',
+    'assets/gallerie/g40.jpg',
+    'assets/gallerie/g42.jpg',
+    'assets/gallerie/g43.jpg',
+    'assets/gallerie/g44.jpg',
+    'assets/gallerie/g48.jpg',
+    'assets/gallerie/g50.jpg',
+    'assets/gallerie/g20.jpg',
+    'assets/gallerie/g24.jpg',
+    'assets/gallerie/g28.jpg',
+  ];
+
+  ngAfterViewInit() {
+    this.initSwiper();
+  }
+
+  private initSwiper() {
+    // Configurez Swiper pour utiliser les modules nécessaires
+    Swiper.use([Autoplay]);
+
+    new Swiper(this.swiperContainer.nativeElement, {
+      // Modules
+      modules: [Autoplay],
+
+      // Configuration spécifique
+      spaceBetween: 50,
+      speed: 14000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        576: { slidesPerView: 2 },
+        992: { slidesPerView: 3 },
+        1200: { slidesPerView: 4 },
+        1400: { slidesPerView: 5 },
+      },
+      loop: true,
+
+      // Paramètres critiques pour Angular
+      observer: true, // Surveille les changements du DOM
+      observeParents: true, // Surveille les changements des parents
+      observeSlideChildren: true, // Surveille les changements des slides
+    });
   }
 }

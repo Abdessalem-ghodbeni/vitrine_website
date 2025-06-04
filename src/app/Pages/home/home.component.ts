@@ -9,6 +9,8 @@ import { ChiffreComponent } from '../chiffre/chiffre.component';
 import { FQComponent } from '../fq/fq.component';
 import { WhyEquinoxComponent } from '../../why-equinox/why-equinox.component';
 import { RealisationsComponent } from '../realisations/realisations.component';
+import { TemoinComponent } from '../temoin/temoin.component';
+import { RouterModule } from '@angular/router';
 // Dans votre composant ou fichier global styles.css
 
 // Configurez Swiper pour utiliser les modules nécessaires
@@ -24,7 +26,9 @@ Swiper.use([Autoplay, EffectFade, Pagination]);
     ChiffreComponent,
     FQComponent,
     WhyEquinoxComponent,
+    RouterModule,
     RealisationsComponent,
+    TemoinComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
